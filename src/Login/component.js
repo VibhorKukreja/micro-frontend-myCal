@@ -35,9 +35,11 @@ class Login extends  Component {
             })
                 .then(function (response) {
                     console.log(response);
+                    window.localStorage.setItem("token", response.token)
                 })
                 .catch(function (error) {
                     console.log(error);
+                    notify.show('Unable to login!', 'error');
                 });
         }
 
